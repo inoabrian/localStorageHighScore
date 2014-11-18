@@ -3,7 +3,7 @@ localStorageHighScore
 
 Creating a local storage high score table. 
 
-// create a LocalHighScore object;
+``// create a LocalHighScore object;
 var clientHighScores = new LocalHighScore();
 
 
@@ -15,4 +15,4 @@ clientHighScores.setNewScore(newScore);
 
 // clear the high score table
 clientHighScores.resetScores();
-// Result = clientHighScores.local -> Storage {length: 0}
+// Result = clientHighScores.local -> Storage {length: 0}``
