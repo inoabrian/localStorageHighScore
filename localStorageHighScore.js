@@ -3,14 +3,13 @@ function LocalHighScore() {
 
   this.local = {};
   this.arrayOfScores = [];
-  this.getLocal = function() {
-    try {
-      if ('localStorage' in window && window['localStorage'] !== null)
-        this.local = localStorage;
-    } catch (e) {
-      return false;
-    }
-  };
+
+  try {
+    if ('localStorage' in window && window['localStorage'] !== null)
+      this.local = localStorage;
+  } catch (e) {
+    return false;
+  }
 
   this.setNewScore = function(roundNumber) {
     var newHighScore = roundNumber;
