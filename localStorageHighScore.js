@@ -23,13 +23,15 @@ function LocalHighScore() {
         }
       }
       scores.push(newHighScore);
-      scores = scores.sort(function(a,b){return Number(b) - Number(a)});
-      scores = scores.filter(function(element,index){
-         if(index < 5)
-            return element;
+      scores = scores.sort(function(a, b) {
+        return Number(b) - Number(a)
+      });
+      scores = scores.filter(function(element, index) {
+        if (index < 5)
+          return element;
       });
       this.addHighScore(scores);
-    } else { 
+    } else {
       this.addHighScore(newHighScore);
       return true;
     }
