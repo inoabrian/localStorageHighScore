@@ -16,27 +16,19 @@ function LocalHighScore() {
     var newHighScore = roundNumber;
     // Get scores array or if no scores true
     var scores = this.getPreviousScore();
-    var lesserScores = [];
-    var flag = false;
+
     if (typeof scores == 'object') {
       for (var i = 0; i < scores.length; i++) {
-        if (scores[i] < newHighScore) {
-          if(!flag){
-             lesserScores.push(newHighScore);
-             flag = true;
-          }else{
-             if (scores[i + 1])
-               lesserScores.push(scores[i + 1]);
-          }
+        if (Number(scores[i]) == newHighScore) {
+          return false;
         }
-        lesserScores.push(scores[i]);
-     }
-     scores = lesserScores;
-      console.log(scores);
+      }
+      scores.push(newHighScore);
+      scores = scores.sort(function(a,b){return Number(a) - Number(b)});
       this.addHighScore(scores);
     } else {
       this.addHighScore(newHighScore);
-      console.log('New Score added');
+      return true;
     }
   };
 
@@ -53,7 +45,7 @@ function LocalHighScore() {
   };
 
   this.resetScores = function() {
-     this.local.clear();
+    this.local.clear();
   };
 
 };
