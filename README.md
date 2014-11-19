@@ -15,15 +15,15 @@ clientHighScores.setNewScore(newScore);
 
 newScore = 21;
 clientHighScores.setNewScore(newScore);
-// Result = clientHighScores.local -> Storage{HighScore:"20,21",length:1}
+// clientHighScores.local -> Storage{HighScore:"20,21",length:1}
 
 // handles duplicates
 // newScore still 21
 clientHighScores.setNewScore(newScore);
-// Result = clientHighScores.local -> Storage{HighScore:"20,21",length:1}
+// clientHighScores.local -> Storage{HighScore:"20,21",length:1}
 
-clientHighScores.getPreviousScore()
-// Result = [20,21]
+var recentHighScores = clientHighScores.getPreviousScore()
+// recentHighScores = [20,21]
 
 // clear the high score table
 clientHighScores.resetScores();
