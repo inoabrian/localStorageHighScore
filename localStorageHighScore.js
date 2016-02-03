@@ -5,8 +5,9 @@ function LocalHighScore() {
   this.arrayOfScores = [];
 
   try {
-    if ('localStorage' in window && window['localStorage'] !== null)
+    if ('localStorage' in window && window['localStorage'] !== null){
       this.local = localStorage;
+    }
   } catch (e) {
     return false;
   }
